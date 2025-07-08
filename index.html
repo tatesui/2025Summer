@@ -170,12 +170,14 @@ scenes.push(createScene("bg4.png", [
 
 mainLoop();
 </script>
+
 <script>
-  window.onload = () => {
-    const height = document.body.scrollHeight;
+  window.addEventListener("load", () => {
+    const height = document.documentElement.scrollHeight || document.body.scrollHeight;
     parent.postMessage({ type: "setHeight2025summer", height }, "*");
-  };
+  });
 </script>
+
 
 </body>
 </html>
