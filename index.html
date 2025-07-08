@@ -173,7 +173,7 @@ mainLoop();
 
 <script>
   window.addEventListener("load", () => {
-    const height = document.documentElement.scrollHeight || document.body.scrollHeight;
+    const height = document.body.scrollHeight || document.documentElement.scrollHeight;
     parent.postMessage({ type: "setHeight2025summer", height }, "*");
   });
 </script>
