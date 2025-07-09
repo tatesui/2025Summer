@@ -28,6 +28,23 @@ const ctx = canvas.getContext("2d");
 let scenes = [];
 let currentScene = 0;
 
+
+  
+       // ★★★ クリックしてJimdoの現在のタブでリンクに飛ばす ★★★
+        canvas.addEventListener('click', function() {
+            // ★ここを、クリックした時に飛びたいリンクのURLに書き換えてください★
+            var linkURL = "https://www.tateshina-aquarium.jp/2025/07/06/%E5%A4%8F%E4%BC%91%E3%81%BF%E6%9C%9F%E9%96%93%E3%81%AE%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB/";
+
+            // 親のJimdoのページでリンクを開く
+            if (window.parent) {
+                window.parent.location.href = linkURL;
+            } else {
+                // iframeじゃない時に単独で開いた場合の念のための処理
+                window.location.href = linkURL;
+            }
+        });
+  
+
 function createScene(bgSrc, actors = [], wait = 3000) {
   return { bgSrc, actors, wait };
 }
@@ -168,20 +185,7 @@ scenes.push(createScene("bg4.png", [
 // ---- ここまで ----
 
 mainLoop();
-  
-       // ★★★ クリックしてJimdoの現在のタブでリンクに飛ばす ★★★
-        canvas.addEventListener('click', function() {
-            // ★ここを、クリックした時に飛びたいリンクのURLに書き換えてください★
-            var linkURL = "https://www.tateshina-aquarium.jp/2025/07/06/%E5%A4%8F%E4%BC%91%E3%81%BF%E6%9C%9F%E9%96%93%E3%81%AE%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB/";
 
-            // 親のJimdoのページでリンクを開く
-            if (window.parent) {
-                window.parent.location.href = linkURL;
-            } else {
-                // iframeじゃない時に単独で開いた場合の念のための処理
-                window.location.href = linkURL;
-            }
-        });
 </script>
 
 </body>
