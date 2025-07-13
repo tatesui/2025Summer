@@ -17,11 +17,25 @@
             display: block;
             cursor: pointer; /* ポインターカーソルに設定 */
     }
+       
+    .canvas-wrapper {
+       width: 100%;
+      max-width: 840px;
+      aspect-ratio: 7 / 2; /* 840 / 240 */
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
   </style>
 </head>
 <body>
 
-<canvas id="stage" width="840" height="240" style="display: block;"></canvas>
+  
+<div class="canvas-wrapper">
+  <canvas id="stage" width="840" height="240"></canvas>
+</div>
 
 <script>
 const imageBasePath = "images/";
